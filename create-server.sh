@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##### Change these values ###
-ZONE_ID="Z07892523JQ5KL41RPODC"
+ZONE_ID="Z02840562URRFNPSQLKL6"
 DOMAIN="devopsb26.online"
 SG_NAME="allow-all"
 env=dev
