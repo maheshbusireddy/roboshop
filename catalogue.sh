@@ -24,5 +24,7 @@ yum install mongodb-org -y
 
 mongo --host mongodb-dev.devopsb26.online </app/schema/catalogue.js
 
+systemctl restart catalogue
+
 
 
