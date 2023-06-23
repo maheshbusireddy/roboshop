@@ -5,6 +5,7 @@ yum install nodejs -y
 useradd roboshop
 mkdir /app 
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip 
+rm -rf /app/*
 cd /app 
 unzip /tmp/catalogue.zip
 cd /app 
@@ -14,4 +15,9 @@ cp ${script_location}/files/catalogue.service /etc/systemd/system/catalogue.serv
 systemctl daemon-reload
 systemctl enable catalogue 
 systemctl start catalogue
+
+cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo
+yum install mongodb-org-shell -y
+
+mongo --host localhost </app/schema/catalogue.js
 
